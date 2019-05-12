@@ -1,9 +1,8 @@
-const filteredKeys = collection.filter(item => item[pre])
-const originalKeys = collection.map(item => item)
+const filteredKeys = (collection, pre) => collection.filter(item => item[pre]).length
+const originalKeys = (collection, pre) => collection.map(item => item).length
 
 const truthCheck = (collection, pre) => {
-  const result = filteredKeys.length === originalKeys.length ? true : false
-  return result
+ return filteredKeys(collection, pre) === originalKeys(collection, pre) ? true : false
 }
 
 console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"},
